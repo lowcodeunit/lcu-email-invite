@@ -1,13 +1,17 @@
 <div class="invite-container">
     <form id="invite-form" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="15px" [formGroup]="InviteForm"
       (ngSubmit)="Invite()">
-      <p id="invite-friend-p" [ngStyle]="{'color':TextColor }">{{ Title }}</p>
-      <input matInput class="user-info-input" id="email-invite-input" type="email"  
+      <!-- <p id="invite-friend-p" [ngStyle]="{'color':TextColor }">{{ Title }}</p> -->
+      <input matInput class="email-input" id="email-invite-input" type="email"  
         [placeholder]="Placeholder"
         [style.background-color]= "InputBackgroundColor"
         [ngStyle]="{ 'width': InputWidth, 'height': InputHeight }"
         formControlName="emailInvite">
-      <button mat-raised-button [disabled]="this.InviteForm.value.emailInvite === ''" class="invite-button" id="invite-button" type="submit"  [color]="ButtonColor">
+      <button mat-raised-button [disabled]="this.InviteForm.value.emailInvite === ''" 
+      class="email-button" id="invite-button" type="submit"  
+      [ngStyle]="{ 'background-color': ButtonColor, 'color': ButtonTextColor}"
+      (mouseenter)="ButtonMouseEnter()"
+      (mouseleave)="ButtonMouseLeave()">
         {{ ButtonText }}
       </button>
 
