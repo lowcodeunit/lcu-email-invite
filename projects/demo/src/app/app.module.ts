@@ -15,6 +15,7 @@ import { LcuEmailInviteModule } from '@lowcodeunit/lcu-email-invite-common';
     AppComponent,
     HomeComponent,
     DocumentationComponent
+    
   ],
   imports: [
     AppRoutingModule,
