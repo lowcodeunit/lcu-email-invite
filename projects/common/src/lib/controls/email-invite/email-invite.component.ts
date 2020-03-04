@@ -26,6 +26,9 @@ public InputWidth: string;
 @Input('title')
 public Title: string;
 
+@Input('text-color')
+public TextColor: string;
+
 @Input('placeholder')
 public Placeholder: string;
 
@@ -68,6 +71,11 @@ public InviteClicked: EventEmitter<any>;
     this.InviteClicked.emit(emails);
   }
 
+  // public emailIsValid() {
+  //   let email = this.InviteForm.value.emailInvite;
+  //   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+  // }
+
   protected setDefaults(){
     if(!this.ButtonColor){
       this.ButtonColor = "primary";
@@ -88,6 +96,9 @@ public InviteClicked: EventEmitter<any>;
     }
     if(!this.InputHeight){
       this.InputHeight = "20px"
+    }
+    if(!this.TextColor){
+      this.TextColor = "grey"
     }
 
   if(!this.Placeholder){
