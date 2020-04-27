@@ -1,14 +1,16 @@
 {
-  "templates": {
-    "repository": "lowcodeunit-devkit/lcu-cli-templates-core",
-    "scope": "@lowcodeunit",
-    "workspace": "lcu-email-invite"
-  },
-  "config": {
-    "wc": ["wc/lcu-email-invite.lcu.js"],
-    "solutions": {},
-    "elements": {},
-    "data-flow": {},
-    "dependencies": {}
-  }
+	"templates": {
+		"repository": "lowcodeunit-devkit/lcu-cli-templates-core",
+		"scope": "@lowcodeunit",
+		"workspace": "lcu-email-invite"
+	},
+	"config": {
+		"wc": [
+			"wc/lcu-email-invite.lcu.js"
+		],
+		"solutions": {},
+		"elements": {},
+		"data-flow": {},
+		"dependencies": {}
+	}
 }

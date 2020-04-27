@@ -14,8 +14,14 @@ public EmailTemplate: FormGroup;
 @Input('button-color')
 public ButtonColor: string;
 
+@Input('button-hover-color')
+public ButtonHoverColor: string;
+
 @Input('button-text')
 public ButtonText: string;
+
+@Input('button-text-color')
+public ButtonTextColor: string;
 
 @Input('input-background-color')
 public InputBackgroundColor: string;
@@ -23,8 +29,11 @@ public InputBackgroundColor: string;
 @Input('input-width')
 public InputWidth: string;
 
-@Input('title')
-public Title: string;
+// @Input('title')
+// public Title: string;
+
+@Input('text-color')
+public TextColor: string;
 
 @Input('placeholder')
 public Placeholder: string;
@@ -35,12 +44,15 @@ public InputHeight: string;
 @Output('invite-clicked')
 public InviteClicked: EventEmitter<any>;
 
+public MasterButtonColor: string;
+
   constructor() {
     this.InviteClicked = new EventEmitter<any>();
   }
 
   public ngOnInit(): void { 
     this.setDefaults();
+    this.MasterButtonColor = this.ButtonColor;
     this.InviteForm = new FormGroup({
       emailInvite: new FormControl('', {validators:[Validators.required, Validators.email]})
     })
@@ -68,17 +80,33 @@ public InviteClicked: EventEmitter<any>;
     this.InviteClicked.emit(emails);
   }
 
+  // public emailIsValid() {
+  //   let email = this.InviteForm.value.emailInvite;
+  //   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+  // }
+public ButtonMouseEnter(){
+  this.ButtonColor = this.ButtonHoverColor;
+}
+public ButtonMouseLeave(){
+  this.ButtonColor = this.MasterButtonColor;
+}
   protected setDefaults(){
     if(!this.ButtonColor){
-      this.ButtonColor = "primary";
+      this.ButtonColor = "grey";
+    }
+    if(!this.ButtonHoverColor){
+      this.ButtonHoverColor = "red";
+    }
+    if(!this.ButtonTextColor){
+      this.ButtonTextColor = "white";
     }
 
     if(!this.ButtonText){
       this.ButtonText = "Send"
     }
-    if(!this.Title){
-      this.Title = "List Emails"
-    }
+    // if(!this.Title){
+    //   this.Title = "List Emails"
+    // }
 
     if(!this.InputBackgroundColor){
       this.InputBackgroundColor = "white";
@@ -87,11 +115,14 @@ public InviteClicked: EventEmitter<any>;
       this.InputWidth = "200px"
     }
     if(!this.InputHeight){
-      this.InputHeight = "20px"
+      this.InputHeight = "35px"
+    }
+    if(!this.TextColor){
+      this.TextColor = "grey"
     }
 
   if(!this.Placeholder){
-    this.Placeholder = "Enter Email Address"
+    this.Placeholder = "Enter email address"
   }
   }
 
