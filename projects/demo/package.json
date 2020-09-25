@@ -2,7 +2,7 @@
 	"name": "@lowcodeunit/lcu-email-invite-demo",
 	"version": "0.0.1",
 	"peerDependencies": {
-		"@angular/common": "~8.1.2",
-		"@angular/core": "~8.1.2"
+		"@angular/common": "~10.1.3",
+		"@angular/core": "~10.1.3"
 	}
 }
