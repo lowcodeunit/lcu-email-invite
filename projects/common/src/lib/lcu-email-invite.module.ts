@@ -19,7 +19,7 @@ import { EmailInviteDirective } from './directives/email-invite.directive';
   entryComponents: []
 })
 export class LcuEmailInviteModule {
-  static forRoot(): ModuleWithProviders {
+  static forRoot(): ModuleWithProviders <LcuEmailInviteModule>{
     return {
       ngModule: LcuEmailInviteModule,
       providers: [EmailInviteService]
