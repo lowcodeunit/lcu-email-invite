@@ -1,11 +1,11 @@
 import { Injectable, Injector } from '@angular/core';
-import { StateManagerContext } from '@lcu/common';
+import { StateContext } from '@lcu/common';
 import { EmailInviteModel } from '../models/email-invite.model';
 
 @Injectable({
     providedIn: 'root'
 })
-export class EmailInviteManagerContext extends StateManagerContext<EmailInviteModel> {
+export class EmailInviteManagerContext extends StateContext<EmailInviteModel> {
 
     protected State: EmailInviteModel;
 
@@ -24,11 +24,11 @@ export class EmailInviteManagerContext extends StateManagerContext<EmailInviteMo
         });
     }
     
-    protected async loadStateKey() {
+    protected loadStateKey(): string {
         return 'main';
     }
 
-    protected async loadStateName() {
+    protected loadStateName(): string {
         return 'email-invite';
     }
 }
